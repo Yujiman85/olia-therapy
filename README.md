@@ -3,6 +3,8 @@
 A redesign proposal for [oliatherapy.com](https://oliatherapy.com), rebuilt from the
 existing one-pager into a six-page static site.
 
+**Live draft:** <https://yujiman85.github.io/olia-therapy/>
+
 **This is not the live site.** The real site is already published and indexed.
 Every page here carries `<meta name="robots" content="noindex, nofollow">` and
 `robots.txt` disallows everything, so this draft cannot compete with the real
@@ -25,6 +27,17 @@ assets/css/site.css   Design tokens + all component styles
 assets/js/site.js     Mobile menu, reader controls, FAQ accordion
 assets/fonts/         Fraunces + Work Sans, self-hosted woff2 (latin subset)
 ```
+
+## Hosting
+
+Published via GitHub Pages from `main`. The repo is public because GitHub Pages
+does not serve private repos on a free plan — the draft carries `noindex` and a
+blanket `robots.txt` disallow so it stays out of search results.
+
+Note the belt-and-braces caveat: `Disallow: /` means a crawler never fetches the
+pages, so it never reads the `noindex` either. Nothing links here, so neither
+matters in practice — but if this URL is ever shared widely, drop the
+`robots.txt` disallow and let the `noindex` do the work properly.
 
 ## Run it locally
 
