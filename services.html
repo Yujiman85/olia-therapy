@@ -10,8 +10,8 @@
 
 <title>Services | Olia Therapy</title>
 <link rel="stylesheet" href="assets/css/site.css">
-<link rel="preload" href="assets/fonts/worksans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/publicsans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/zillaslab-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 /* Apply saved reading preferences before first paint to avoid a flash. */
 (function(){try{var p=JSON.parse(localStorage.getItem('olia-reader-prefs'))||{};
@@ -48,7 +48,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
+      <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-branch"/></svg>
       Olia Therapy
     </a>
 
@@ -81,7 +81,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 <div class="mobile-menu" id="mobile-menu" hidden>
   <div class="mm-head">
     <span class="brand" aria-hidden="true">
-      <svg focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
+      <svg focusable="false" style="color:var(--accent)"><use href="#i-branch"/></svg>
       Olia Therapy
     </span>
     <button type="button" class="mm-close" data-menu-close>
@@ -126,15 +126,17 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
     <div class="wrap">
 
       <div class="service-block" id="in-home">
-        <div class="stack-s">
+        <div class="sb-head">
           <span class="tag">Neurologic OT</span>
           <h2>In-home occupational therapy</h2>
         </div>
         <div class="stack">
           <p>One-on-one sessions built around the tasks that matter most in your own home — dressing, bathing, cooking, transfers, and home safety. The small routines that add up to independence.</p>
           <p>Because we work where you live, what we practice transfers directly. No clinic gym standing in for real life.</p>
-          <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What is included</h3>
-          <ul class="checks">
+          </div>
+          <div>
+            <p class="cd-list-label">What is included</p>
+            <ul class="checks">
             <li>A full evaluation of your goals, your home, and how you move through it</li>
             <li>A written plan you keep, in plain language</li>
             <li>Hands-on sessions in your own space</li>
@@ -145,15 +147,17 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
       </div>
 
       <div class="service-block" id="seating">
-        <div class="stack-s">
+        <div class="sb-head">
           <span class="tag">RESNA ATP &amp; SMS</span>
           <h2>Seating &amp; mobility evaluations</h2>
         </div>
         <div class="stack">
           <p>A certified assessment of your wheelchair, cushion, and positioning needs. The goal is lower pressure injury risk, better comfort, and paperwork that actually supports your funding request.</p>
           <p>Whether you are due for a new evaluation or something about your current setup is not working, this is a focused look at your equipment and how it fits your body.</p>
-          <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What is included</h3>
-          <ul class="checks">
+          </div>
+          <div>
+            <p class="cd-list-label">What is included</p>
+            <ul class="checks">
             <li>Measurements, posture assessment, and pressure mapping review</li>
             <li>Trial of cushions and positioning components where possible</li>
             <li>Clear equipment recommendations with reasons</li>

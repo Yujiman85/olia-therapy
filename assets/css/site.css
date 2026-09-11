@@ -5,43 +5,53 @@
    MS. Sizes and targets below are deliberately above WCAG 2.2 AA minimums.
    ========================================================================== */
 
-/* ---------- fonts (self-hosted, latin subset) ---------- */
+/* ---------- fonts (self-hosted, latin subset) ----------
+   Zilla Slab: a slab serif with squared terminals — reads drafted and exact
+   rather than botanical. Public Sans: the US Web Design System face, drawn for
+   government legibility, which is both the right call for this audience and
+   quietly apt for a DC practice. */
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces-var-latin.woff2') format('woff2-variations');
-  font-weight: 400 600;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'Zilla Slab';
+  src: url('../fonts/zillaslab-500-latin.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122;
 }
 @font-face {
-  font-family: 'Work Sans';
-  src: url('../fonts/worksans-var-latin.woff2') format('woff2-variations');
-  font-weight: 400 600;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'Zilla Slab';
+  src: url('../fonts/zillaslab-600-latin.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('../fonts/publicsans-var-latin.woff2') format('woff2-variations');
+  font-weight: 400 700; font-style: normal; font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122;
 }
 
 /* ---------- tokens ---------- */
 :root {
-  /* palette B — sage & clay */
-  --ink:        #23261F;  /* body text        13.4:1 on --bg */
-  --deep:       #38473C;  /* headings          8.6:1 on --bg */
-  --mid:        #516254;  /* muted text  5.7/6.1/4.9 on bg/surface/sunk */
-  --clay:       #A4523A;  /* accent: text 4.8:1, white-on-fill 5.5:1 */
-  --clay-deep:  #934934;  /* accent text 5.6/6.1/4.8 on bg/surface/sunk */
-  --bg:         #F2EFE8;  /* page ground */
-  --surface:    #FAF8F4;  /* raised panels */
-  --sunk:       #E3DED2;  /* recessed bands */
-  --line:       rgba(56, 71, 60, 0.18);
-  --line-firm:  rgba(56, 71, 60, 0.32);
-  --on-deep:    #F2EFE8;  /* text on --deep fills */
-  --on-clay:    #FFFFFF;  /* text on --clay fills */
+  /* "Old Town" — drawn from the Federal rowhouse architecture of the corridor
+     she actually serves: limewash walls, shutter green, oxblood doors, aged
+     brass hardware. Every pairing measured, not estimated. */
+  --ink:         #15181A;  /* body text        14.7:1 on --bg */
+  --deep:        #1F3A2E;  /* shutter green    10.2:1 on --bg */
+  --slate:       #2E4248;  /* secondary deep    8.7:1 on --bg */
+  --mid:         #4A5A56;  /* muted text   6.0/6.8/5.4 on bg/surface/sunk */
+  --accent:      #6E2A2A;  /* oxblood      8.6:1 as text, 10.4:1 with white */
+  --accent-deep: #5A2121;  /* pressed / hover */
+  --brass:       #73592B;  /* hairlines and small marks only */
+  --bg:          #E9EAE4;  /* limewash */
+  --surface:     #F7F7F3;  /* plaster */
+  --sunk:        #DCDED5;
+  --line:        rgba(31, 58, 46, 0.20);
+  --line-firm:   rgba(31, 58, 46, 0.38);
+  --on-deep:     #F7F7F3;
+  --on-accent:   #FFFFFF;
 
   /* type */
-  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --sans:  'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --serif: 'Zilla Slab', 'Bitter', Georgia, serif;
+  --sans:  'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --text-base: 1.1875rem;   /* 19px floor — stroke-accessibility research */
   --leading: 1.65;
   --measure: 65ch;
@@ -52,22 +62,24 @@
   --header-h: 4.5rem;
   --radius: 4px;
   --tap: 3rem;              /* 48px — double the WCAG 2.2 minimum */
-  --focus: var(--clay-deep);
+  --focus: var(--accent);
 }
 
 /* reader preference: high contrast. Every pairing pushed past 7:1. */
 :root[data-contrast="high"] {
-  --ink:       #14170F;
-  --deep:      #1E2A20;
-  --mid:       #33412F;
-  --clay:      #7A3826;
-  --clay-deep: #6E3221;
-  --bg:        #FFFDF7;
-  --surface:   #FFFFFF;
-  --sunk:      #F0ECE0;
-  --line:      rgba(20, 23, 15, 0.45);
-  --line-firm: rgba(20, 23, 15, 0.7);
-  --focus:     #14170F;
+  --ink:         #0B0D0E;
+  --deep:        #12261D;
+  --slate:       #1B2C31;
+  --mid:         #22302C;
+  --accent:      #4E1C1C;
+  --accent-deep: #3C1414;
+  --brass:       #4A3A1C;
+  --bg:          #FFFFFF;
+  --surface:     #FFFFFF;
+  --sunk:        #F2F2EC;
+  --line:        rgba(11, 13, 14, 0.5);
+  --line-firm:   rgba(11, 13, 14, 0.75);
+  --focus:       #0B0D0E;
 }
 
 /* reader preference: text size. Scales the root so every rem follows. */
@@ -96,7 +108,7 @@ h1, h2, h3, h4 {
   color: var(--deep);
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.008em;
   text-wrap: balance;
   margin: 0;
 }
@@ -107,7 +119,7 @@ h4 { font-size: 1.0625rem; font-family: var(--sans); font-weight: 600; letter-sp
 p  { margin: 0; max-width: var(--measure); }
 strong { font-weight: 600; color: var(--deep); }
 
-a { color: var(--clay-deep); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
 
 .lede {
@@ -119,8 +131,24 @@ a:hover { text-decoration-thickness: 2px; }
 .eyebrow {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--clay-deep);
+  color: var(--accent);
   margin: 0;
+}
+
+/* ---------- threshold rule ----------
+   A wall with a gap in it, the way a plan drawing marks a doorway. Used to
+   separate major sections instead of a generic hairline. */
+.threshold { border: 0; height: 3px; margin: 0; background:
+  linear-gradient(to right,
+    var(--deep) 0, var(--deep) calc(50% - 2.25rem),
+    transparent calc(50% - 2.25rem), transparent calc(50% + 2.25rem),
+    var(--deep) calc(50% + 2.25rem), var(--deep) 100%);
+}
+.threshold-left { background:
+  linear-gradient(to right,
+    var(--deep) 0, var(--deep) 3.5rem,
+    transparent 3.5rem, transparent 8rem,
+    var(--deep) 8rem, var(--deep) 100%);
 }
 
 /* ---------- layout ---------- */
@@ -178,7 +206,7 @@ section { padding-block: var(--section-y); }
   color: var(--deep); text-decoration: none; margin-right: auto;
   padding-block: 0.5rem;
 }
-.brand svg { width: 1.6rem; height: 1.6rem; flex: none; }
+.brand svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--accent); }
 
 .nav-links { display: flex; align-items: center; gap: 0.35rem; }
 .nav-links a {
@@ -189,7 +217,7 @@ section { padding-block: var(--section-y); }
 .nav-links a:hover { background: var(--sunk); color: var(--deep); }
 .nav-links a[aria-current="page"] {
   color: var(--deep); font-weight: 600;
-  box-shadow: inset 0 -2px 0 var(--clay);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 /* ---------- reader controls ---------- */
@@ -216,8 +244,8 @@ section { padding-block: var(--section-y); }
   font-size: 1.0625rem; font-weight: 600; text-decoration: none; cursor: pointer;
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
 }
-.btn-primary { background: var(--clay); color: var(--on-clay); border-color: var(--clay); }
-.btn-primary:hover { background: var(--clay-deep); border-color: var(--clay-deep); }
+.btn-primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 .btn-secondary { background: transparent; color: var(--deep); border-color: var(--line-firm); }
 .btn-secondary:hover { border-color: var(--deep); background: var(--surface); }
 .btn-on-deep { background: var(--on-deep); color: var(--deep); border-color: var(--on-deep); }
@@ -226,7 +254,7 @@ section { padding-block: var(--section-y); }
 
 .link-more {
   display: inline-flex; align-items: center;
-  min-height: var(--tap); font-weight: 600; color: var(--clay-deep);
+  min-height: var(--tap); font-weight: 600; color: var(--accent);
   text-decoration: none; box-shadow: inset 0 -1px 0 currentColor; width: fit-content;
 }
 .link-more:hover { box-shadow: inset 0 -2px 0 currentColor; }
@@ -271,7 +299,7 @@ section { padding-block: var(--section-y); }
     font-family: var(--serif); font-size: 1.5rem; color: var(--deep);
     text-decoration: none; border-bottom: 1px solid var(--line);
   }
-  .mm-links a[aria-current="page"] { color: var(--clay-deep); font-weight: 600; }
+  .mm-links a[aria-current="page"] { color: var(--accent); font-weight: 600; }
   .mm-foot { padding: 1.5rem var(--gutter) 6rem; display: flex; flex-direction: column; gap: 1.25rem; }
   .mm-foot .reader-controls { display: flex; }
 }
@@ -303,9 +331,18 @@ section { padding-block: var(--section-y); }
 .hero { padding-block: clamp(3rem, 7vw, 5.5rem); }
 .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .hero-copy { display: flex; flex-direction: column; gap: 1.6rem; align-items: flex-start; }
+.hero-art { width: 100%; height: auto; }
+.hero-art .room { fill: none; stroke: var(--deep); stroke-width: 2.5; }
+.hero-art .wall { stroke: var(--deep); stroke-width: 2.5; stroke-linecap: round; }
+.hero-art .door { stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+.hero-art .fixture { fill: none; stroke: var(--mid); stroke-width: 1.75; }
+.hero-art .label {
+  font-family: var(--sans); font-size: 12px; font-weight: 600;
+  fill: var(--mid); letter-spacing: .01em;
+}
 @media (max-width: 56.25rem) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-art { max-width: 20rem; margin-inline: auto; }
+  .hero-art { max-width: 24rem; margin-inline: auto; }
 }
 
 /* ---------- cards + grids ---------- */
@@ -332,20 +369,23 @@ section { padding-block: var(--section-y); }
 /* condition detail — heading spans, then prose and checklist share the width */
 .condition-detail { display: grid; gap: 1.5rem 3rem; grid-template-columns: 1fr 1fr; align-items: start; }
 .condition-detail > .cd-head { grid-column: 1 / -1; display: flex; align-items: center; gap: 1rem; }
-.condition-detail > .cd-head svg { width: 2.75rem; height: 2.75rem; flex: none; color: var(--clay); }
+.condition-detail > .cd-head svg { width: 2.75rem; height: 2.75rem; flex: none; color: var(--accent); }
 .condition-detail + .condition-detail { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--line); }
 .cd-list-label { font-weight: 600; font-size: 1rem; color: var(--deep); margin-bottom: 0.85rem; }
 @media (max-width: 47.5rem) { .condition-detail { grid-template-columns: 1fr; } }
 
 /* service blocks */
-.service-block { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+/* Same correction as .condition-detail: a tag and a two-word heading cannot
+   hold a column on their own. Heading spans, content shares the width. */
+.service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem clamp(2rem, 5vw, 3.5rem); align-items: start; }
+.service-block > .sb-head { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 0.9rem; align-items: flex-start; }
 .service-block + .service-block { margin-top: var(--section-y); padding-top: var(--section-y); border-top: 1px solid var(--line); }
 @media (max-width: 56.25rem) { .service-block { grid-template-columns: 1fr; } }
 
 .tag {
   display: inline-block; width: fit-content;
-  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--clay-deep); border: 1px solid var(--line-firm);
+  font-size: 0.9375rem; font-weight: 600;
+  color: var(--accent); border: 1px solid var(--line-firm);
   border-radius: 99px; padding: 0.35rem 0.85rem;
 }
 
@@ -354,7 +394,7 @@ section { padding-block: var(--section-y); }
 .checks li { display: grid; grid-template-columns: 1.35rem 1fr; gap: 0.85rem; align-items: start; }
 .checks li::before {
   content: ""; width: 1.35rem; height: 1.35rem; margin-top: 0.2rem;
-  background: var(--clay); border-radius: 50%;
+  background: var(--accent); border-radius: 50%;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/1.35rem no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/1.35rem no-repeat;
 }
@@ -400,9 +440,9 @@ section { padding-block: var(--section-y); }
   display: grid; grid-template-columns: auto 1fr; gap: 1.25rem 1.5rem;
   align-items: start; padding: 1.75rem 2rem;
   background: var(--surface); border: 1px solid var(--line);
-  border-left: 3px solid var(--clay); border-radius: var(--radius);
+  border-left: 3px solid var(--accent); border-radius: var(--radius);
 }
-.caregiver svg { width: 2.25rem; height: 2.25rem; color: var(--clay); flex: none; }
+.caregiver svg { width: 2.25rem; height: 2.25rem; color: var(--accent); flex: none; }
 .caregiver .stack-s { gap: 0.85rem; }
 @media (max-width: 36rem) { .caregiver { grid-template-columns: 1fr; } }
 
@@ -422,10 +462,10 @@ section { padding-block: var(--section-y); }
   font-family: var(--serif); font-size: 1.25rem; font-weight: 500; color: var(--deep);
   position: relative;
 }
-.faq-q:hover { color: var(--clay-deep); }
+.faq-q:hover { color: var(--accent); }
 .faq-q .chev {
   position: absolute; right: 0; width: 1.5rem; height: 1.5rem; flex: none;
-  transition: transform .2s ease; color: var(--clay-deep);
+  transition: transform .2s ease; color: var(--accent);
 }
 .faq-q[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .faq-a { padding: 0 0 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
@@ -456,10 +496,10 @@ section { padding-block: var(--section-y); }
 
 .notice {
   display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; align-items: start;
-  background: var(--sunk); border-left: 3px solid var(--clay);
+  background: var(--sunk); border-left: 3px solid var(--accent);
   padding: 1rem 1.25rem; border-radius: var(--radius); font-size: 1rem;
 }
-.notice svg { width: 1.35rem; height: 1.35rem; color: var(--clay-deep); flex: none; margin-top: 0.15rem; }
+.notice svg { width: 1.35rem; height: 1.35rem; color: var(--accent); flex: none; margin-top: 0.15rem; }
 .notice p { color: var(--ink); max-width: 58ch; }
 .band-deep .notice { background: rgba(242,239,232,.1); border-left-color: #E8B9A5; }
 .band-deep .notice p { color: rgba(242,239,232,.9); }
@@ -481,7 +521,7 @@ section { padding-block: var(--section-y); }
 .prose h3 { margin-top: 1rem; }
 .prose ul { margin: 0; padding-left: 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .prose li { max-width: var(--measure); }
-.prose li::marker { color: var(--clay); }
+.prose li::marker { color: var(--accent); }
 
 /* draft banner — removed before any real launch */
 .draft-banner {
@@ -498,7 +538,7 @@ section { padding-block: var(--section-y); }
   font-family: var(--sans); font-weight: 600; font-size: 1.0625rem; letter-spacing: 0; }
 .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .footer-links a { display: inline-flex; align-items: center; min-height: 2.5rem; color: var(--ink); text-decoration: none; }
-.footer-links a:hover { color: var(--clay-deep); text-decoration: underline; }
+.footer-links a:hover { color: var(--accent); text-decoration: underline; }
 .footer-bottom {
   margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; justify-content: space-between;
@@ -542,7 +582,7 @@ section { padding-block: var(--section-y); }
 .steps li { counter-increment: step; display: flex; flex-direction: column; gap: 0.6rem; }
 .steps li::before {
   content: counter(step);
-  font-family: var(--serif); font-size: 1.5rem; color: var(--clay-deep);
+  font-family: var(--serif); font-size: 1.5rem; color: var(--accent);
   width: 2.75rem; height: 2.75rem; border: 1px solid var(--line-firm); border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
 }
@@ -551,7 +591,7 @@ section { padding-block: var(--section-y); }
 
 /* ---------- form status ---------- */
 .form-status {
-  background: var(--sunk); border-left: 3px solid var(--clay);
+  background: var(--sunk); border-left: 3px solid var(--accent);
   padding: 1rem 1.25rem; border-radius: var(--radius); font-size: 1rem; max-width: 34rem;
 }
 .form-status[hidden] { display: none; }

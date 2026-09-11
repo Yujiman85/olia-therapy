@@ -10,8 +10,8 @@
 
 <title>In-home occupational therapy in DC & Northern Virginia | Olia Therapy</title>
 <link rel="stylesheet" href="assets/css/site.css">
-<link rel="preload" href="assets/fonts/worksans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/publicsans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/zillaslab-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 /* Apply saved reading preferences before first paint to avoid a flash. */
 (function(){try{var p=JSON.parse(localStorage.getItem('olia-reader-prefs'))||{};
@@ -48,7 +48,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
-      <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
+      <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-branch"/></svg>
       Olia Therapy
     </a>
 
@@ -81,7 +81,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 <div class="mobile-menu" id="mobile-menu" hidden>
   <div class="mm-head">
     <span class="brand" aria-hidden="true">
-      <svg focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
+      <svg focusable="false" style="color:var(--accent)"><use href="#i-branch"/></svg>
       Olia Therapy
     </span>
     <button type="button" class="mm-close" data-menu-close>
@@ -124,19 +124,45 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
             <a class="btn btn-secondary" href="services.html">See how it works</a>
           </div>
         </div>
-        <svg class="hero-art" viewBox="0 0 320 320" role="img" aria-labelledby="hero-art-title" style="color:var(--deep)">
-  <title id="hero-art-title">An olive branch drawn as a rising line of leaves</title>
-  <path d="M24 296C86 240 128 168 296 26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" opacity=".9"/>
-  <ellipse cx="58" cy="256" rx="15" ry="27" transform="rotate(-42 58 256)" fill="var(--deep)"/>
-  <ellipse cx="104" cy="212" rx="15" ry="27" transform="rotate(-36 104 212)" fill="var(--mid)"/>
-  <ellipse cx="150" cy="166" rx="15" ry="27" transform="rotate(-44 150 166)" fill="var(--deep)"/>
-  <ellipse cx="198" cy="118" rx="15" ry="27" transform="rotate(-38 198 118)" fill="var(--mid)"/>
-  <ellipse cx="246" cy="72" rx="15" ry="27" transform="rotate(-44 246 72)" fill="var(--clay)"/>
-  <ellipse cx="286" cy="34" rx="11" ry="20" transform="rotate(-44 286 34)" fill="var(--clay)" opacity=".55"/>
+        <svg class="hero-art" viewBox="0 0 380 330" role="img" aria-labelledby="plan-title plan-desc">
+  <title id="plan-title">Plan view of a home</title>
+  <desc id="plan-desc">A floor plan of four rooms — kitchen, bathroom, entry and bedroom — with every doorway between them drawn in red. These are the rooms occupational therapy actually happens in.</desc>
+
+  <!-- outer walls, broken at the front door -->
+  <path class="wall" d="M30 40 H350 M350 40 V290 M30 40 V290 M30 290 H90 M130 290 H350"/>
+
+  <!-- internal walls, each broken where a doorway sits -->
+  <path class="wall" d="M190 40 V120 M190 160 V290"/>
+  <path class="wall" d="M30 165 H80 M120 165 H190"/>
+  <path class="wall" d="M190 165 H250 M290 165 H350"/>
+
+  <!-- the doorways, in oxblood: the thresholds this practice is organised around -->
+  <path class="door" d="M90 290 A40 40 0 0 1 130 250"/>
+  <path class="door" d="M80 165 A40 40 0 0 1 120 205"/>
+  <path class="door" d="M190 120 A40 40 0 0 1 230 160"/>
+  <path class="door" d="M250 165 A40 40 0 0 1 290 205"/>
+
+  <!-- kitchen: counter and sink -->
+  <path class="fixture" d="M40 50 H140 V80 H40 Z"/>
+  <circle class="fixture" cx="90" cy="65" r="8.5"/>
+
+  <!-- bathroom: tub -->
+  <rect class="fixture" x="294" y="52" width="46" height="84" rx="7"/>
+
+  <!-- bedroom: bed with pillow -->
+  <rect class="fixture" x="216" y="206" width="86" height="70" rx="3"/>
+  <path class="fixture" d="M216 228 H302"/>
+
+  <text class="label" x="44" y="112">Kitchen</text>
+  <text class="label" x="204" y="76">Bathroom</text>
+  <text class="label" x="44" y="232">Entry</text>
+  <text class="label" x="204" y="194">Bedroom</text>
 </svg>
       </div>
     </div>
   </section>
+
+  <hr class="threshold">
 
   <section class="band-surface">
     <div class="wrap">
@@ -147,35 +173,35 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
       </div>
       <div class="condition-list">
         <div class="condition">
-          <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-stroke"/></svg>
+          <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-stroke"/></svg>
           <div>
             <h3>Stroke</h3>
             <p>Getting back to daily tasks after a stroke — dressing, cooking, bathing, and moving safely around your home.</p>
           </div>
         </div>
         <div class="condition">
-          <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-brain"/></svg>
+          <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-brain"/></svg>
           <div>
             <h3>Brain injury</h3>
             <p>Rebuilding routines and habits after a traumatic or acquired brain injury, at a pace that works for you.</p>
           </div>
         </div>
         <div class="condition">
-          <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-spine"/></svg>
+          <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-spine"/></svg>
           <div>
             <h3>Spinal cord injury</h3>
             <p>Adapting how you do everyday things, and finding positioning that protects your skin and comfort.</p>
           </div>
         </div>
         <div class="condition">
-          <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-progressive"/></svg>
+          <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-progressive"/></svg>
           <div>
             <h3>Parkinson's &amp; MS</h3>
             <p>Managing energy, movement, and safety as things change over time.</p>
           </div>
         </div>
         <div class="condition">
-          <svg aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-seating"/></svg>
+          <svg aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-seating"/></svg>
           <div>
             <h3>Seating &amp; mobility</h3>
             <p>For anyone whose posture, positioning, or wheelchair fit is not working the way it should.</p>
@@ -211,13 +237,13 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
       </div>
       <div class="grid-2">
         <div class="card">
-          <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
+          <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-branch"/></svg>
           <h3>In-home occupational therapy</h3>
           <p>Sessions built around the tasks that matter most to you — dressing, bathing, cooking, transfers, and moving safely around your home.</p>
           <a class="link-more" href="services.html#in-home">About in-home therapy</a>
         </div>
         <div class="card">
-          <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-seating"/></svg>
+          <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--accent)"><use href="#i-seating"/></svg>
           <h3>Seating &amp; mobility evaluations</h3>
           <p>A certified look at your wheelchair, cushion, and positioning — for comfort, skin safety, and the paperwork that funding requires.</p>
           <a class="link-more" href="services.html#seating">About seating &amp; mobility</a>

@@ -25,7 +25,7 @@ accessibility.html  Accessibility statement (footer link)
 
 assets/css/site.css   Design tokens + all component styles
 assets/js/site.js     Mobile menu, reader controls, FAQ accordion
-assets/fonts/         Fraunces + Work Sans, self-hosted woff2 (latin subset)
+assets/fonts/         Zilla Slab + Public Sans, self-hosted woff2 (latin subset)
 ```
 
 ## Hosting
@@ -46,6 +46,27 @@ python3 -m http.server 8080
 ```
 
 Then open <http://localhost:8080>.
+
+## Visual identity
+
+**"Old Town"** — drawn from the Federal rowhouse architecture of the corridor the
+practice actually serves: limewash walls, shutter green, oxblood doors, aged
+brass. Deliberately not the cream-and-terracotta wellness palette, which is both
+generic and, at this point, the signature of AI-generated design.
+
+The hero is a **plan view of a home** with every doorway drawn in oxblood. A
+doorway is the object this practice is organised around — it is where transfers
+happen, where chairs do not fit, and where people fall. The same idea recurs as
+the `.threshold` rule between major sections: a wall with a gap in it.
+
+**Zilla Slab** for display (squared terminals, reads drafted rather than
+botanical) and **Public Sans** for body — the US Web Design System face, drawn
+for government legibility, which is the right call for this audience and quietly
+apt for a DC practice.
+
+Contrast has real headroom: body text 14.7:1, headings 10.2:1, the oxblood
+accent 8.6:1 as text and 10.4:1 carrying white. High-contrast mode pushes every
+pairing past 12:1.
 
 ## Editing
 
