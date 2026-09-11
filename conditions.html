@@ -32,6 +32,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m0 0-5.5-5.5M19 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 11v5.5M12 7.6v.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-people" viewBox="0 0 32 32"><circle cx="12" cy="10.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M4.5 26c0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M21.5 7.2a4.5 4.5 0 0 1 0 8.6M24 18.9c3.1.9 5.5 3.8 5.5 7.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".7"/></symbol>
   <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2.75" y="6.5" width="18.5" height="13.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13.25" r="3.75" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 6.5 10 4h4l1.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-stroke" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8.5 16h4.2l2.1-4.8 3.1 9.4 2-4.6h3.6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></symbol>
   <symbol id="i-brain" viewBox="0 0 32 32"><path d="M16 4c5.5 0 9.5 4.6 9.5 10.3 0 6.6-5.6 11.4-9.5 12.5-3.9-1.1-9.5-5.9-9.5-12.5C6.5 8.6 10.5 4 16 4Z" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M11.5 15.2c1.7-1.9 1.7 2 3.4.1 1.7-1.9 1.7 2 3.4.1M16 20.5v3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".85"/></symbol>
@@ -123,15 +124,15 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 
   <section class="band-surface">
     <div class="wrap">
-      <div class="stack-l">
-        <div id="stroke" class="service-block">
-          <div class="stack-s">
-            <svg aria-hidden="true" focusable="false" style="color:var(--clay);width:3rem;height:3rem"><use href="#i-stroke"/></svg>
+      <div>
+        <div id="stroke" class="condition-detail">
+          <div class="cd-head">
+            <svg aria-hidden="true" focusable="false"><use href="#i-stroke"/></svg>
             <h2>Stroke</h2>
           </div>
-          <div class="stack">
-            <p>After a stroke, everyday tasks can feel different or unsafe. We work on what you want to get back to, in the place you do it.</p>
-            <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What we might work on</h3>
+          <p>After a stroke, everyday tasks can feel different or unsafe. We work on what you want to get back to, in the place you do it.</p>
+          <div>
+            <p class="cd-list-label">What we might work on</p>
             <ul class="checks">
               <li>Dressing, bathing, and grooming with one working side</li>
               <li>Safe transfers to bed, chair, toilet, and car</li>
@@ -141,14 +142,14 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
             </ul>
           </div>
         </div>
-        <div id="brain-injury" class="service-block">
-          <div class="stack-s">
-            <svg aria-hidden="true" focusable="false" style="color:var(--clay);width:3rem;height:3rem"><use href="#i-brain"/></svg>
+        <div id="brain-injury" class="condition-detail">
+          <div class="cd-head">
+            <svg aria-hidden="true" focusable="false"><use href="#i-brain"/></svg>
             <h2>Brain injury</h2>
           </div>
-          <div class="stack">
-            <p>A traumatic or acquired brain injury can change memory, attention, and energy. We rebuild routines step by step, at a pace that does not wear you out.</p>
-            <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What we might work on</h3>
+          <p>A traumatic or acquired brain injury can change memory, attention, and energy. We rebuild routines step by step, at a pace that does not wear you out.</p>
+          <div>
+            <p class="cd-list-label">What we might work on</p>
             <ul class="checks">
               <li>Daily routines and memory strategies</li>
               <li>Managing fatigue through the day</li>
@@ -158,14 +159,14 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
             </ul>
           </div>
         </div>
-        <div id="spinal-cord-injury" class="service-block">
-          <div class="stack-s">
-            <svg aria-hidden="true" focusable="false" style="color:var(--clay);width:3rem;height:3rem"><use href="#i-spine"/></svg>
+        <div id="spinal-cord-injury" class="condition-detail">
+          <div class="cd-head">
+            <svg aria-hidden="true" focusable="false"><use href="#i-spine"/></svg>
             <h2>Spinal cord injury</h2>
           </div>
-          <div class="stack">
-            <p>After a spinal cord injury, the goal is doing what matters in a new way — and protecting your body while you do it.</p>
-            <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What we might work on</h3>
+          <p>After a spinal cord injury, the goal is doing what matters in a new way — and protecting your body while you do it.</p>
+          <div>
+            <p class="cd-list-label">What we might work on</p>
             <ul class="checks">
               <li>New ways to dress, bathe, and groom</li>
               <li>Transfer technique and equipment</li>
@@ -175,14 +176,14 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
             </ul>
           </div>
         </div>
-        <div id="parkinsons-ms" class="service-block">
-          <div class="stack-s">
-            <svg aria-hidden="true" focusable="false" style="color:var(--clay);width:3rem;height:3rem"><use href="#i-progressive"/></svg>
+        <div id="parkinsons-ms" class="condition-detail">
+          <div class="cd-head">
+            <svg aria-hidden="true" focusable="false"><use href="#i-progressive"/></svg>
             <h2>Parkinson's &amp; MS</h2>
           </div>
-          <div class="stack">
-            <p>With a progressive condition, needs change over time. We plan for how things are now, and stay ready for what comes next.</p>
-            <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What we might work on</h3>
+          <p>With a progressive condition, needs change over time. We plan for how things are now, and stay ready for what comes next.</p>
+          <div>
+            <p class="cd-list-label">What we might work on</p>
             <ul class="checks">
               <li>Saving energy across the whole day</li>
               <li>Movement and motor planning strategies</li>
@@ -192,14 +193,14 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
             </ul>
           </div>
         </div>
-        <div id="seating-mobility" class="service-block">
-          <div class="stack-s">
-            <svg aria-hidden="true" focusable="false" style="color:var(--clay);width:3rem;height:3rem"><use href="#i-seating"/></svg>
+        <div id="seating-mobility" class="condition-detail">
+          <div class="cd-head">
+            <svg aria-hidden="true" focusable="false"><use href="#i-seating"/></svg>
             <h2>Seating &amp; mobility</h2>
           </div>
-          <div class="stack">
-            <p>If your chair hurts, if you slide forward, or if your skin is breaking down, your setup is not right. That can be measured and fixed.</p>
-            <h3 style="font-size:1.0625rem;font-family:var(--sans);font-weight:600">What we might work on</h3>
+          <p>If your chair hurts, if you slide forward, or if your skin is breaking down, your setup is not right. That can be measured and fixed.</p>
+          <div>
+            <p class="cd-list-label">What we might work on</p>
             <ul class="checks">
               <li>Full wheelchair and cushion assessment</li>
               <li>Pressure injury risk review</li>
@@ -215,9 +216,21 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
 
   <section>
     <div class="wrap wrap-narrow">
-      <div class="notice">
-        <svg aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
-        <p>Do not see your condition here? Neurologic OT covers a lot of ground. Call or email and I will tell you honestly whether I am the right person to help.</p>
+      <div class="stack-l">
+        <div class="notice">
+          <svg aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <p>Do not see your condition here? Neurologic OT covers a lot of ground. Call or email and I will tell you honestly whether I am the right person to help.</p>
+        </div>
+
+      <div class="caregiver">
+        <svg aria-hidden="true" focusable="false"><use href="#i-people"/></svg>
+        <div class="stack-s">
+          <h3>Looking into this for someone else?</h3>
+          <p>Most people who call are a husband, a wife, or an adult child. You do not need to have it all worked out before you get in touch, and you do not need your family member on the phone.</p>
+          <p>Tell me what you are seeing and what worries you. I will tell you whether occupational therapy is the right tool, and what to ask for if it is not.</p>
+          <a class="link-more" href="contact.html">Get in touch</a>
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -225,7 +238,6 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
   <section class="band-deep">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Next step</p>
         <h2>Tell me what you are working on</h2>
         <p class="lede">A short conversation is usually enough to know whether I can help.</p>
       </div>

@@ -32,6 +32,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m0 0-5.5-5.5M19 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 11v5.5M12 7.6v.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-people" viewBox="0 0 32 32"><circle cx="12" cy="10.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M4.5 26c0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M21.5 7.2a4.5 4.5 0 0 1 0 8.6M24 18.9c3.1.9 5.5 3.8 5.5 7.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".7"/></symbol>
   <symbol id="i-camera" viewBox="0 0 24 24"><rect x="2.75" y="6.5" width="18.5" height="13.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13.25" r="3.75" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 6.5 10 4h4l1.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-stroke" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8.5 16h4.2l2.1-4.8 3.1 9.4 2-4.6h3.6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></symbol>
   <symbol id="i-brain" viewBox="0 0 32 32"><path d="M16 4c5.5 0 9.5 4.6 9.5 10.3 0 6.6-5.6 11.4-9.5 12.5-3.9-1.1-9.5-5.9-9.5-12.5C6.5 8.6 10.5 4 16 4Z" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M11.5 15.2c1.7-1.9 1.7 2 3.4.1 1.7-1.9 1.7 2 3.4.1M16 20.5v3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".85"/></symbol>
@@ -182,8 +183,23 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
         </div>
       </div>
       <p style="margin-top:2.5rem">
-        <a class="link-arrow" href="conditions.html">Read more about who I help<svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <a class="link-more" href="conditions.html">Read more about who I help</a>
       </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="caregiver">
+        <svg aria-hidden="true" focusable="false"><use href="#i-people"/></svg>
+        <div class="stack-s">
+          <h3>Looking into this for someone else?</h3>
+          <p>Most people who call are a husband, a wife, or an adult child. You do not need to have it all worked out before you get in touch, and you do not need your family member on the phone.</p>
+          <p>Tell me what you are seeing and what worries you. I will tell you whether occupational therapy is the right tool, and what to ask for if it is not.</p>
+          <a class="link-more" href="contact.html">Get in touch</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -198,14 +214,24 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
           <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-branch"/></svg>
           <h3>In-home occupational therapy</h3>
           <p>Sessions built around the tasks that matter most to you — dressing, bathing, cooking, transfers, and moving safely around your home.</p>
-          <a class="link-arrow" href="services.html#in-home">About in-home therapy<svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a class="link-more" href="services.html#in-home">About in-home therapy</a>
         </div>
         <div class="card">
           <svg class="card-icon" aria-hidden="true" focusable="false" style="color:var(--clay)"><use href="#i-seating"/></svg>
           <h3>Seating &amp; mobility evaluations</h3>
           <p>A certified look at your wheelchair, cushion, and positioning — for comfort, skin safety, and the paperwork that funding requires.</p>
-          <a class="link-arrow" href="services.html#seating">About seating &amp; mobility<svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a class="link-more" href="services.html#seating">About seating &amp; mobility</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="photo-slot" style="min-height:20rem">
+        <svg aria-hidden="true" focusable="false"><use href="#i-camera"/></svg>
+        <b>Photo placeholder</b>
+        <span>A session in progress, or a home setup. Real photography beats stock here &mdash; 77% of patients look for visual content before they book.</span>
       </div>
     </div>
   </section>
@@ -219,7 +245,7 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
         <div class="stack">
           <p>A clinic gym is useful. But it is not your kitchen, your bathroom, or your front steps. Working in your own home means we deal with the real obstacles in your day.</p>
           <p>It also means family or caregivers can join a session whenever that helps.</p>
-          <a class="link-arrow" href="services.html">How a visit works<svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a class="link-more" href="services.html">How a visit works</a>
         </div>
       </div>
     </div>
@@ -232,22 +258,62 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
         <h2>One therapist, start to finish</h2>
         <p class="lede">Every visit and every plan comes from the same person, who knows your history.</p>
       </div>
+
       <div class="credentials">
-        <div class="credential"><p class="credential-name">RESNA ATP</p><p>Assistive Technology Professional</p></div>
-        <div class="credential"><p class="credential-name">SMS</p><p>Seating and Mobility Specialist</p></div>
-        <div class="credential"><p class="credential-name">Private pay</p><p>No insurance paperwork or session caps</p></div>
-        <div class="credential"><p class="credential-name">DC &amp; Northern Virginia</p><p>In-home visits only</p></div>
+        <div class="credential">
+          <p class="credential-name">RESNA ATP</p>
+          <p>Assistive Technology Professional</p>
+          <p class="credential-what">A certification in choosing and fitting equipment &mdash; wheelchairs, cushions, and the tools that make daily tasks possible.</p>
+        </div>
+        <div class="credential">
+          <p class="credential-name">RESNA SMS</p>
+          <p>Seating and Mobility Specialist</p>
+          <p class="credential-what">A further certification specific to wheelchair seating and positioning, and the clinical documentation funders ask for.</p>
+        </div>
+        <div class="credential">
+          <p class="credential-name">Private pay</p>
+          <p>No insurance paperwork or session caps</p>
+          <p class="credential-what">The plan follows your goals rather than what a policy will authorise.</p>
+        </div>
+        <div class="credential">
+          <p class="credential-name">DC &amp; Northern Virginia</p>
+          <p>In-home visits only</p>
+          <p class="credential-what">Therapy happens in the rooms you actually use, not a clinic gym.</p>
+        </div>
       </div>
       <p style="margin-top:2.5rem">
-        <a class="link-arrow" href="about.html">More about Olia Therapy<svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <a class="link-more" href="about.html">More about Olia Therapy</a>
       </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What clients say</h2>
+        <p class="lede">Three short quotes belong here, from people who agreed to be quoted.</p>
+      </div>
+      <div class="quote-grid">
+        <div class="quote quote-empty">
+          <p class="quote-body">A quote about getting a specific task back &mdash; showering alone, cooking again, getting out to the car.</p>
+          <p class="quote-attrib">First name, city</p>
+        </div>
+        <div class="quote quote-empty">
+          <p class="quote-body">A quote from a spouse or adult child about what changed at home for the whole household.</p>
+          <p class="quote-attrib">First name, city</p>
+        </div>
+        <div class="quote quote-empty">
+          <p class="quote-body">A quote about the seating and mobility side &mdash; comfort, pain, or equipment that finally fit.</p>
+          <p class="quote-attrib">First name, city</p>
+        </div>
+      </div>
+      <p class="draft-note" style="margin-top:1.75rem">Get written permission before publishing any of these, and use first names only. If there are none yet, delete this section rather than filling it with anything invented &mdash; an empty section is better than a quote nobody said.</p>
     </div>
   </section>
 
   <section class="band-deep">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Next step</p>
         <h2>Not sure if this is the right fit?</h2>
         <p class="lede">Tell me a little about what you need. I will follow up and we can work out whether I can help.</p>
       </div>
