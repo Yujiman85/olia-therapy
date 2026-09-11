@@ -25,7 +25,7 @@ accessibility.html  Accessibility statement (footer link)
 
 assets/css/site.css   Design tokens + all component styles
 assets/js/site.js     Mobile menu, reader controls, FAQ accordion
-assets/fonts/         Zilla Slab + Public Sans, self-hosted woff2 (latin subset)
+assets/fonts/         Zilla Slab + Atkinson Hyperlegible Next, self-hosted woff2
 ```
 
 ## Hosting
@@ -60,9 +60,11 @@ happen, where chairs do not fit, and where people fall. The same idea recurs as
 the `.threshold` rule between major sections: a wall with a gap in it.
 
 **Zilla Slab** for display (squared terminals, reads drafted rather than
-botanical) and **Public Sans** for body — the US Web Design System face, drawn
-for government legibility, which is the right call for this audience and quietly
-apt for a DC practice.
+botanical) and **Atkinson Hyperlegible Next** for body — drawn by the Braille
+Institute for low-vision readers, with deliberately disambiguated letterforms.
+In a neutral face, capital I and lowercase l render as identical bare stems and
+0 is hard to tell from O; here they are distinct. That matters when the reader
+has visual field loss and the string is a phone number.
 
 Contrast has real headroom: body text 14.7:1, headings 10.2:1, the oxblood
 accent 8.6:1 as text and 10.4:1 carrying white. High-contrast mode pushes every
@@ -84,8 +86,9 @@ the top of `site.css`. Changing the palette is an edit to that block alone.
 - **Rates** — the FAQ has the slot but no numbers.
 - **Photography** — dashed `.photo-slot` blocks mark where real images go. The
   headshot on the About page matters most.
-- **Contact form** — renders and validates visually but sends nothing. Wire it to
-  Formspree, Netlify Forms, or a real handler before launch.
+- **Contact form** — validation is real and accessible (inline errors plus a
+  focusable error summary that links to each field), but nothing is sent. Wire
+  it to Formspree, Netlify Forms, or a real handler before launch.
 - **Referral question** in the FAQ needs a real answer for DC and Virginia.
 
 ## Accessibility

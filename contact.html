@@ -10,7 +10,7 @@
 
 <title>Get in touch | Olia Therapy</title>
 <link rel="stylesheet" href="assets/css/site.css">
-<link rel="preload" href="assets/fonts/publicsans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/atkinson-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/zillaslab-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 /* Apply saved reading preferences before first paint to avoid a flash. */
@@ -139,13 +139,20 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
         </div>
 
         <form class="form" id="contact-form" novalidate>
+          <div class="error-summary" id="error-summary" tabindex="-1" role="alert" hidden>
+            <h2 id="error-summary-title">There is a problem</h2>
+            <ul id="error-summary-list"></ul>
+          </div>
+
           <div class="field">
             <label for="name">Your name</label>
-            <input type="text" id="name" name="name" autocomplete="name">
+            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error">
+            <p class="field-error" id="name-error" hidden></p>
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email">
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+            <p class="field-error" id="email-error" hidden></p>
           </div>
           <div class="field">
             <label for="phone">Phone <span style="font-weight:400">(optional)</span></label>
@@ -154,7 +161,8 @@ if(p.contrast==='high')document.documentElement.setAttribute('data-contrast','hi
           <div class="field">
             <label for="message">What can I help with?</label>
             <p class="hint" id="message-hint">A sentence or two is plenty. No medical details, please.</p>
-            <textarea id="message" name="message" rows="5" aria-describedby="message-hint"></textarea>
+            <textarea id="message" name="message" rows="5" aria-describedby="message-hint message-error"></textarea>
+            <p class="field-error" id="message-error" hidden></p>
           </div>
           <button type="submit" class="btn btn-on-deep" style="align-self:flex-start">Send message</button>
           <p class="form-status" id="form-status" tabindex="-1" role="status" hidden></p>

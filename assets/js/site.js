@@ -154,19 +154,102 @@
   });
 
   /* ---------------------------------------------------------------
-     Contact form — DRAFT ONLY. Nothing is sent anywhere.
-     Replace this block with a real endpoint (Formspree, Netlify Forms,
-     or a POST handler) before the site goes live.
+     Contact form — DRAFT ONLY. Nothing is sent anywhere. The validation
+     below is real, though, because the accessible pattern is the part worth
+     getting right before someone wires up an endpoint: inline errors on each
+     field, plus a focusable summary at the top that links to them. The
+     summary complements the inline errors, it never replaces them.
      --------------------------------------------------------------- */
   var form = document.getElementById('contact-form');
   if (form) {
+    var summary = document.getElementById('error-summary');
+    var summaryList = document.getElementById('error-summary-list');
+    var status = document.getElementById('form-status');
+
+    var RULES = [
+      { id: 'name',    msg: 'Enter your name' },
+      { id: 'email',   msg: 'Enter an email address', test: function (v) {
+          return v.indexOf('@') > 0 && v.indexOf('.', v.indexOf('@')) > v.indexOf('@') + 1;
+        }, invalidMsg: 'Enter an email address in the format name@example.com' },
+      { id: 'message', msg: 'Tell me briefly what you need help with' }
+    ];
+
+    function setFieldError(id, message) {
+      var input = document.getElementById(id);
+      var errorEl = document.getElementById(id + '-error');
+      if (!input || !errorEl) return;
+      if (message) {
+        input.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = message;
+        errorEl.hidden = false;
+      } else {
+        input.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
+        errorEl.hidden = true;
+      }
+    }
+
+    function validate() {
+      var errors = [];
+      RULES.forEach(function (rule) {
+        var input = document.getElementById(rule.id);
+        if (!input) return;
+        var value = input.value.trim();
+        var message = '';
+        if (!value) message = rule.msg;
+        else if (rule.test && !rule.test(value)) message = rule.invalidMsg;
+        setFieldError(rule.id, message);
+        if (message) errors.push({ id: rule.id, message: message });
+      });
+      return errors;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var status = document.getElementById('form-status');
-      if (!status) return;
+      var errors = validate();
+
+      if (errors.length) {
+        status.hidden = true;
+        summaryList.innerHTML = '';
+        errors.forEach(function (err) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + err.id;
+          a.textContent = err.message;
+          a.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            document.getElementById(err.id).focus();
+          });
+          li.appendChild(a);
+          summaryList.appendChild(li);
+        });
+        summary.hidden = false;
+        summary.focus();
+        return;
+      }
+
+      summary.hidden = true;
       status.hidden = false;
       status.textContent = 'This is a design draft — the form is not connected yet, so nothing was sent. Please call 202-888-0543 or email hello@oliatherapy.com.';
       status.focus();
+    });
+
+    /* Clear a field error as soon as the person fixes it, but never introduce
+       one mid-typing — that punishes someone still composing their answer.
+
+       This listens on 'input' rather than 'blur' deliberately. Clearing the
+       error on blur removes its element just as the pointer travels toward the
+       Send button, which collapses the layout and shifts the button out from
+       under the click. On 'input' the reflow happens while they are still
+       typing, long before they reach for anything. */
+    RULES.forEach(function (rule) {
+      var input = document.getElementById(rule.id);
+      if (!input) return;
+      input.addEventListener('input', function () {
+        if (input.getAttribute('aria-invalid') !== 'true') return;
+        var value = input.value.trim();
+        if (value && (!rule.test || rule.test(value))) setFieldError(rule.id, '');
+      });
     });
   }
 
