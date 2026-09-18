@@ -129,7 +129,7 @@
   });
 
   /* Menu is a mobile affordance only — close it if the viewport grows. */
-  var wide = window.matchMedia('(min-width: 61.3125rem)');
+  var wide = window.matchMedia('(min-width: 70.0625rem)');
   var onWide = function (ev) { if (ev.matches) closeMenu(); };
   if (wide.addEventListener) wide.addEventListener('change', onWide);
   else if (wide.addListener) wide.addListener(onWide);
@@ -251,6 +251,34 @@
         if (value && (!rule.test || rule.test(value))) setFieldError(rule.id, '');
       });
     });
+  }
+
+  /* ---------------------------------------------------------------
+     Image placeholders report their own rendered size, so the number is
+     honest at whatever width you are looking at rather than a figure that
+     only holds at one breakpoint. Nothing here suggests what the picture
+     should be — that is the client's call.
+     --------------------------------------------------------------- */
+  var placeholders = document.querySelectorAll('[data-ph]');
+  if (placeholders.length) {
+    var writeDims = function (el) {
+      var out = el.querySelector('[data-ph-dims]');
+      if (!out) return;
+      var r = el.getBoundingClientRect();
+      out.textContent = Math.round(r.width) + ' \u00d7 ' + Math.round(r.height);
+    };
+
+    if (typeof ResizeObserver === 'function') {
+      var ro = new ResizeObserver(function (entries) {
+        entries.forEach(function (entry) { writeDims(entry.target); });
+      });
+      placeholders.forEach(function (el) { ro.observe(el); writeDims(el); });
+    } else {
+      /* Older browsers: set once, then refresh on resize. */
+      var refresh = function () { placeholders.forEach(writeDims); };
+      refresh();
+      window.addEventListener('resize', refresh);
+    }
   }
 
   /* ---------------------------------------------------------------

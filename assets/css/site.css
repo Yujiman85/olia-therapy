@@ -58,7 +58,7 @@
 
   /* space + chrome */
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --section-y: clamp(3.5rem, 8vw, 6rem);
+  --section-y: clamp(2.75rem, 5vw, 4.5rem);
   --header-h: 4.5rem;
   --radius: 4px;
   --tap: 3rem;              /* 48px — double the WCAG 2.2 minimum */
@@ -155,6 +155,7 @@ a:hover { text-decoration-thickness: 2px; }
 .wrap { width: 100%; max-width: 68rem; margin-inline: auto; padding-inline: var(--gutter); }
 .wrap-narrow { max-width: 46rem; }
 section { padding-block: var(--section-y); }
+.section-tight { padding-block: clamp(1.75rem, 3vw, 2.5rem); }
 .band-surface { background: var(--surface); border-block: 1px solid var(--line); }
 .band-sunk    { background: var(--sunk); }
 .band-deep    { background: var(--deep); color: var(--on-deep); }
@@ -165,7 +166,7 @@ section { padding-block: var(--section-y); }
 .stack   { display: flex; flex-direction: column; gap: 1.25rem; }
 .stack-s { display: flex; flex-direction: column; gap: 0.75rem; }
 .stack-l { display: flex; flex-direction: column; gap: 2.5rem; }
-.section-head { display: flex; flex-direction: column; gap: 0.9rem; max-width: 54ch; margin-bottom: 3rem; }
+.section-head { display: flex; flex-direction: column; gap: 0.8rem; max-width: 54ch; margin-bottom: 2.25rem; }
 
 /* WCAG 2.2 — 2.4.11 Focus Not Obscured: sticky header must never cover focus */
 :where(h1, h2, h3, section, [id]) { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
@@ -208,10 +209,12 @@ section { padding-block: var(--section-y); }
 }
 .brand svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--accent); }
 
-.nav-links { display: flex; align-items: center; gap: 0.35rem; }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; }
+.header-phone { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+.header-phone svg { width: 1.1rem; height: 1.1rem; flex: none; }
 .nav-links a {
   display: inline-flex; align-items: center; min-height: var(--tap);
-  padding: 0 0.85rem; border-radius: var(--radius);
+  padding: 0 0.7rem; border-radius: var(--radius);
   color: var(--ink); text-decoration: none; font-size: 1rem;
 }
 .nav-links a:hover { background: var(--sunk); color: var(--deep); }
@@ -263,7 +266,7 @@ section { padding-block: var(--section-y); }
 .menu-toggle { display: none; }
 .mobile-menu { display: none; }
 
-@media (max-width: 61.25rem) {
+@media (max-width: 70rem) {
   .nav-links, .header-inner .reader-controls { display: none; }
   .menu-toggle {
     display: inline-flex; align-items: center; gap: 0.55rem;
@@ -309,7 +312,7 @@ section { padding-block: var(--section-y); }
 @media (max-width: 47.5rem) {
   /* The sticky Call/Email bar covers this, so the header CTA is redundant
      here and would otherwise wrap the header onto a second row. */
-  .header-inner > .btn-primary { display: none; }
+  .header-inner > .btn-primary, .header-phone { display: none; }
 
   .call-bar {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -564,18 +567,31 @@ section { padding-block: var(--section-y); }
   body { background: #fff; }
 }
 
-/* ---------- photo placeholders (no real imagery yet) ---------- */
-.photo-slot {
+/* ---------- image placeholders ----------
+   Deliberately neutral: a box and its rendered size, nothing about what the
+   picture should be. Choosing the imagery is the client's call, and a
+   placeholder that describes a photo quietly makes that decision for her. */
+.img-placeholder {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.6rem; text-align: center;
-  background: var(--sunk); border: 2px dashed var(--line-firm);
-  border-radius: var(--radius); padding: 2rem 1.5rem; min-height: 15rem;
-  color: var(--mid);
+  gap: 0.35rem; text-align: center;
+  background: var(--sunk);
+  border: 2px dashed var(--line-firm);
+  border-radius: var(--radius);
+  padding: 1.5rem; color: var(--mid);
+  width: 100%;
 }
-.photo-slot svg { width: 2.25rem; height: 2.25rem; color: var(--mid); }
-.photo-slot b { color: var(--deep); font-size: 1.0625rem; }
-.photo-slot span { font-size: 0.9375rem; max-width: 28ch; }
-.photo-slot.portrait { aspect-ratio: 4 / 5; min-height: 0; }
+.img-placeholder .ph-label {
+  font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.02em;
+  text-transform: none; color: var(--mid);
+}
+.img-placeholder .ph-dims {
+  font-size: 1.125rem; font-weight: 700; color: var(--deep);
+  font-variant-numeric: tabular-nums;
+}
+.img-placeholder[data-ratio] { aspect-ratio: var(--ph-ratio, 16 / 9); }
+.img-placeholder.portrait { --ph-ratio: 4 / 5; }
+.img-placeholder.wide     { --ph-ratio: 16 / 9; }
+.img-placeholder.hero     { --ph-ratio: 5 / 4; }
 
 /* ---------- numbered steps (a real sequence, so numbers mean something) ---------- */
 .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem; }

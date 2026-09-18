@@ -54,10 +54,16 @@ practice actually serves: limewash walls, shutter green, oxblood doors, aged
 brass. Deliberately not the cream-and-terracotta wellness palette, which is both
 generic and, at this point, the signature of AI-generated design.
 
-The hero is a **plan view of a home** with every doorway drawn in oxblood. A
-doorway is the object this practice is organised around — it is where transfers
-happen, where chairs do not fit, and where people fall. The same idea recurs as
-the `.threshold` rule between major sections: a wall with a gap in it.
+The `.threshold` rule between major sections is a wall with a gap in it, the way
+a plan drawing marks a doorway — the object this practice is organised around,
+since it is where transfers happen, where chairs do not fit, and where people
+fall.
+
+Imagery is left entirely open. Every image slot is a neutral box that reports
+its own rendered size and says nothing about what the picture should be —
+choosing that is the client's call, and a placeholder describing a photo quietly
+makes the decision for her. The sizes update live, so the number is honest at
+whatever width you are viewing rather than true only at one breakpoint.
 
 **Zilla Slab** for display (squared terminals, reads drafted rather than
 botanical) and **Atkinson Hyperlegible Next** for body — drawn by the Braille
@@ -84,8 +90,9 @@ the top of `site.css`. Changing the palette is an edit to that block alone.
 - **Copy** — carried over from the current site, to be rewritten. Anything in an
   italic `.draft-note` block is a prompt for the author, not final text.
 - **Rates** — the FAQ has the slot but no numbers.
-- **Photography** — dashed `.photo-slot` blocks mark where real images go. The
-  headshot on the About page matters most.
+- **Photography** — dashed `.img-placeholder` boxes mark where images go, on
+  Home (hero and mid-page), Services and About. Each reports its own rendered
+  size. Deliberately no art direction attached.
 - **Contact form** — validation is real and accessible (inline errors plus a
   focusable error summary that links to each field), but nothing is sent. Wire
   it to Formspree, Netlify Forms, or a real handler before launch.
