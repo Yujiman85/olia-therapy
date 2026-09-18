@@ -1,7 +1,7 @@
 # Olia Therapy — design draft
 
 A redesign proposal for [oliatherapy.com](https://oliatherapy.com), rebuilt from the
-existing one-pager into a six-page static site.
+existing one-pager into a seven-page static site.
 
 **Live draft:** <https://yujiman85.github.io/olia-therapy/>
 
@@ -96,13 +96,59 @@ the top of `site.css`. Changing the palette is an edit to that block alone.
 - **Copy** — carried over from the current site, to be rewritten. Anything in an
   italic `.draft-note` block is a prompt for the author, not final text.
 - **Rates** — the FAQ has the slot but no numbers.
-- **Photography** — dashed `.img-placeholder` boxes mark where images go, on
-  Home (hero and mid-page), Services and About. Each reports its own rendered
-  size. Deliberately no art direction attached.
+- **Photography** — three dashed `.img-placeholder` boxes: the Home hero, one on
+  Services, one portrait on About. Each reports its own rendered size.
+  Deliberately no art direction attached.
+- **Testimonials** — three empty frames on Home. Left empty on purpose: inventing
+  patient quotes for a medical practice is not a placeholder worth the risk of
+  it shipping. Get written permission, use first names only, and delete the
+  section rather than fill it with anything invented.
 - **Contact form** — validation is real and accessible (inline errors plus a
   focusable error summary that links to each field), but nothing is sent. Wire
   it to Formspree, Netlify Forms, or a real handler before launch.
 - **Referral question** in the FAQ needs a real answer for DC and Virginia.
+
+## Before this ever goes live
+
+1. **Remove the `noindex` meta from all seven pages and the `Disallow: /` from
+   `robots.txt`.** Both exist only because oliatherapy.com is live and this is a
+   near-duplicate. Nothing else is stopping this being indexed.
+2. **Wire the contact form.** The validation is real; the submit handler only
+   prints a draft notice. Point it at Formspree, Netlify Forms or a real handler.
+3. **Remove the draft banner** (`.draft-banner`, in the shared shell on every page).
+4. Fill the placeholders listed above, and delete any section still holding a
+   `.draft-note`.
+
+## Content ownership
+
+Each topic has one canonical page, decided in a de-duplication pass. Before
+adding content, check whether it belongs somewhere else — thirteen sentences
+were once duplicated across pages and are now down to zero.
+
+| Topic | Lives on |
+|---|---|
+| Testimonials | Home |
+| Caregiver panel ("looking into this for someone else?") | Home |
+| Credential *explanations* | About (Home carries the labels only) |
+| "Why in-home, not a clinic" | Services |
+| Full service-area list | Contact |
+| First-visit detail | Services |
+
+The FAQ deliberately restates several of these. An FAQ is a reference surface —
+people expect the answer to be there rather than linked away. That is the one
+place duplication is correct.
+
+## Spacing
+
+Site-wide padding sits near 18% of total height. That is deliberate, not
+leftover: the site is built to be read at length by people with visual and
+cognitive impairment. Two rules are worth not "fixing":
+
+- Sections sharing a background get a reduced gap, because the gap is their only
+  separator. Sections either side of a `band-*` colour change keep the full
+  gap — the band needs room to read as a band.
+- The closing CTA bands run 40–44% padding. That looks wasteful in a
+  measurement and is not; a band with tight padding reads as a stripe.
 
 ## Accessibility
 
