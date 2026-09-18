@@ -210,8 +210,6 @@ section { padding-block: var(--section-y); }
 .brand svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--accent); }
 
 .nav-links { display: flex; align-items: center; gap: 0.25rem; }
-.header-phone { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
-.header-phone svg { width: 1.1rem; height: 1.1rem; flex: none; }
 .nav-links a {
   display: inline-flex; align-items: center; min-height: var(--tap);
   padding: 0 0.7rem; border-radius: var(--radius);
@@ -266,7 +264,7 @@ section { padding-block: var(--section-y); }
 .menu-toggle { display: none; }
 .mobile-menu { display: none; }
 
-@media (max-width: 70rem) {
+@media (max-width: 66rem) {
   .nav-links, .header-inner .reader-controls { display: none; }
   .menu-toggle {
     display: inline-flex; align-items: center; gap: 0.55rem;
@@ -312,7 +310,7 @@ section { padding-block: var(--section-y); }
 @media (max-width: 47.5rem) {
   /* The sticky Call/Email bar covers this, so the header CTA is redundant
      here and would otherwise wrap the header onto a second row. */
-  .header-inner > .btn-primary, .header-phone { display: none; }
+  .header-inner > .btn-primary { display: none; }
 
   .call-bar {
     display: grid; grid-template-columns: 1fr 1fr;

@@ -129,7 +129,7 @@
   });
 
   /* Menu is a mobile affordance only — close it if the viewport grows. */
-  var wide = window.matchMedia('(min-width: 70.0625rem)');
+  var wide = window.matchMedia('(min-width: 66.0625rem)');
   var onWide = function (ev) { if (ev.matches) closeMenu(); };
   if (wide.addEventListener) wide.addEventListener('change', onWide);
   else if (wide.addListener) wide.addListener(onWide);
