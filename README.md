@@ -72,6 +72,12 @@ In a neutral face, capital I and lowercase l render as identical bare stems and
 0 is hard to tell from O; here they are distinct. That matters when the reader
 has visual field loss and the string is a phone number.
 
+Icons are carried over from the original one-pager unchanged — same viewBox,
+same path data, same two-tone structure. Only the colours are remapped
+(`#3E4A34` → `var(--deep)`, `#B98A3E` → `var(--accent)`), which works because
+custom properties inherit through the `<use>` shadow tree. Don't redraw them:
+they're the client's existing marks.
+
 Contrast has real headroom: body text 14.7:1, headings 10.2:1, the oxblood
 accent 8.6:1 as text and 10.4:1 carrying white. High-contrast mode pushes every
 pairing past 12:1.
